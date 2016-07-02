@@ -22,7 +22,7 @@ def main():
     try:
         while True:
             # Distribute as key-value message
-            key = b"%d" % random.randint(1,10000)
+            key = b"%s%d" % (clone.subtree, random.randint(1,10000))
             value = b"%d" % random.randint(1,1000000)
             clone.set(key, value, random.randint(0,30))
             time.sleep(1)
